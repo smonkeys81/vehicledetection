@@ -1,0 +1,19 @@
+train_net: "./test/sample_model/ZF_faster_rcnn_train.pt"
+
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 50000
+max_iter: 10
+display: 5
+average_loss: 100
+momentum: 0.9
+weight_decay: 0.0005
+#debug_info: true
+
+# We disable standard caffe solver snapshotting and implement our own snapshot
+# function
+snapshot: 10
+# We still use the snapshot prefix, though
+snapshot_prefix: "test/out/ZF_faster_rcnn"
+iter_size: 2

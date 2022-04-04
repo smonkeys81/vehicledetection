@@ -1,0 +1,22 @@
+train_net: "../model/VGG16/VGG16_faster_rcnn_train.pt"
+
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 60000
+max_iter: 70000
+display: 1000
+average_loss: 100
+momentum: 0.9
+weight_decay: 0.0005
+
+# function
+snapshot: 5000
+# We still use the snapshot prefix, though
+snapshot_prefix: "../model/out/VGG16/VGG16_faster_rcnn"
+iter_size: 2
+
+# Use below to try another solver.
+# type: "Adam"
+# momentum2: 0.99
+# lr_policy: "fixed"

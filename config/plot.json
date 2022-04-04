@@ -1,0 +1,64 @@
+{
+  "line_plot": {
+    "img_size_w": 710,
+    "img_size_h": 620,
+    "plot_size": 500,
+ 
+    "pos": {
+      "axis_x": [-2, 4],
+      "axis_y": [-6, 1],
+      "prec": [1, -4],
+      "recall": [-3, 8],
+      "ap": [-8, -3],
+      "title": [-22, -2]
+    }    
+  },
+
+  "scatter_plot": {
+    "img_size_w": 1280,
+    "img_size_h": 960,
+    "margin_bottom": 30,
+    "scale": 9,
+    "dist_near": 40,
+    "dist_max": 100,
+    "dist_interval": 5,
+    "FOV": 81.76,
+    "axis_length": 30,
+    "color": {
+      "bg": [230, 230, 230],
+      "line_thick": [20, 20, 20],
+      "line_thin": [200, 200, 200],
+      "TruePos": [0, 255, 0],
+      "FalseNeg": [255, 0, 0],
+      "FalsePos": [255, 255, 0],
+      "Dontcare": 100
+    },
+    "pos": {
+      "axis_x": [2, 3],
+      "axis_z": [2, 0],
+      "unit": [5, 9],
+      "info1": [30, -40],
+      "info2": [-350, -40]
+    }
+  },
+
+  "txt_space_row": 20,
+
+  "font_size": 1.0,
+  "font_thickness": 1.5,
+  "font_space": 5,
+  
+  "font": {
+    "size": 1.0,
+    "thickness": 1.5,
+    "space": 5
+  },
+  
+
+  "color": {
+    "bg": 255,
+    "inner_bg": 220,
+    "grid_line": 100,
+    "mark": [255, 0, 0]
+  }
+}

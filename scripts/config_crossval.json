@@ -1,0 +1,23 @@
+{
+  "k": 5,
+
+  "config_file": "../config/config.json",
+
+  "path": {
+    "dir_label": "/media/dataset/kitti/2d/all_label/",
+    "dir_image": "/media/dataset/kitti/2d/all_img/",
+    "dir_image_right": "/media/dataset/kitti/data_object_image_3/training/image_3/"
+  },
+
+  "convert": {
+    "bash_file": "./convert_model.sh",
+    "iteration_from": 60000,
+    "iteration_to": 70000,
+    "iteration_step": 5000
+  },
+
+  "evaluation": {
+    "trained_file": "../model/out/VGG16_faster_rcnn_converted.caffemodel",
+    "plot_file": "plot.json"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "device": {
+    "gpu": 0
+  },
+  
+  "directory": {
+    "dataset": [
+      {
+      "name": "KITTI",
+      "root": "/media/dataset/kitti/",
+      "train_image": "2d/training_img/",
+      "train_label": "2d/training_label/",
+      "test_image": "2d/test_img/",
+      "test_label": "2d/test_label/",
+      "test_image_right": "data_object_image_3/training/image_3/"
+      },
+      {
+      "name": "BDD",
+      "root": "/media/dataset/bdd100k/",
+      "train_image": "images/100k/train/",
+      "train_label": "labels/bdd100k_labels_images_train.json",
+      "test_image": "images/100k/val/",
+      "test_label": "labels/bdd100k_labels_images_val.json",
+      "test_image_right": ""
+      }
+    ],
+    "result": "result"
+  },
+
+  "file": {
+    "root": "../model/",
+    "net_config": "default_config.json",
+    "net_label": "synset_words.txt",
+    "data_augmentation": "../config/augment.json",
+    "plotting": "../config/plot.json", 
+    "backbone" : [
+      {
+        "name": "ZF",
+        "solver": "ZF_faster_rcnn_solver.pt",  
+        "pretrain": "ZF.v2.caffemodel",
+        "net_test": "ZF_faster_rcnn_test.pt"
+      },
+      {
+        "name": "VGG16",
+        "solver": "VGG16_faster_rcnn_solver.pt",  
+        "pretrain": "VGG16.v2.caffemodel",
+        "net_test": "VGG16_faster_rcnn_test.pt"
+      },
+      {
+        "name": "RES101",
+        "solver": "Res101_solver.pt",  
+        "pretrain": "Res101.v2.caffemodel",
+        "net_test": "Res101_test.pt"
+      },
+      {
+        "name": "FPN",
+        "solver": "FPN_solver.pt",  
+        "pretrain": "ResNet-50-model.caffemodel",
+        "net_test": "FPN_test.pt"
+      }
+    ]          
+  },
+
+  "eval": {
+    "camera": {
+      "fov": 81.76,
+      "f": 7.070493000000e+02,
+      "baseline": 0.54
+     },
+    "iter_score": 200,
+    "iter_score_low": 200,
+    "iou": {
+      "start": 0.70,
+      "end": 0.60,
+      "step": -0.05,
+      "num_color": 10,
+      "color": {
+        "line0": [50, 118, 172],
+        "line1": [239, 66, 133],
+        "line2": [71, 69, 157], 
+        "line3": [205, 57, 60],
+        "line4": [144, 181, 108],
+        "line5": [136, 79, 88],   
+        "line6": [219, 189, 127],   
+        "line7": [127, 127, 127],
+        "line8": [189, 80, 188],
+        "line9": [78, 187, 173]  
+      } 
+    }
+  },
+
+  "save_image": {
+    "conv": {
+      "dir": "conv",
+      "num_col_merged_from": 3,
+      "num_col_merged_to": 10,
+      "large_width": 1200
+    },
+    "birdeye": {
+      "save": 1,
+      "dir": "birdeye",
+      "iou": 0.65,
+      "prec_target": 0.9,
+      "prec_weight": 1,      
+      "recall_target": 0.9,
+      "recall_weight": 2,
+      "num_sub_samples": 100
+    },
+    "overlay": {
+      "save": 0,  
+      "dir": "overlay",
+      "score_min": 0.2,
+      "score_max": 0.7,
+      "interval": 10      
+    },
+    "disparity": {
+      "save": 0,
+      "dir": "disparity",
+      "socre_min": 0.1  
+    },
+    "bbox": {
+      "save": 1,
+      "save_tp": 0,
+      "dir_fn": "bbox_FN",
+      "dir_fp": "bbox_FP",
+      "dir_tp": "bbox_TP",
+      "iou": 0.65,
+      "score": 0.2
+    }
+  },
+
+  "font": {
+    "size": 1.0,
+    "thickness": 1.5,
+    "row_space": 5
+  },
+
+  "stereo_matching": {
+    "mode": 0,
+    "win_size": 21,
+    "num_disparities": 64,
+    "block_size": 5,
+    "smooth_p1": 128,
+    "smooth_p2": 256
+  }
+}
